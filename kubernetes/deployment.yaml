@@ -1,0 +1,51 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: gocon-app
+  name: gocon-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: gocon-app
+      name: gocon-app
+    spec:
+      containers:
+        - name: gocon-app
+          image: gcr.io/cbro-scratch/github-broady-gocon-2017:v0.26
+          imagePullPolicy: Always
+          env:
+            - name: HELLO_GOPHER
+              value: "gocon-2017"
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secret/service_account/key.json
+          volumeMounts:
+            - name: service-account
+              mountPath: /var/secret/service_account
+            - name: certs
+              mountPath: /etc/ssl/certs
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+      volumes:
+        - name: service-account
+          secret:
+            secretName: k8s-gservice-account
+        - name: certs
+          hostPath:
+            path: /etc/ssl/certs
+
+# Move to deployment/spec to use rolling updates.
+#
+# strategy:
+#   type: RollingUpdate
+#   rollingUpdate:
+#     maxUnavailable: 50%
+#     maxSurge: 100%
