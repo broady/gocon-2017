@@ -1,0 +1,4 @@
+# Used with cloudbuild
+FROM scratch
+COPY app /bin/app
+CMD ["/bin/app"]

@@ -1,0 +1,14 @@
+steps:
+  - name: gcr.io/cloud-builders/go
+    env: ["PROJECT_ROOT=app"]
+    args: ["build", "-o", "app"]
+
+  - name: gcr.io/cloud-builders/docker
+    args: [
+      "build",
+      "-f", "Dockerfile.scratch",
+      "-t", "gcr.io/${PROJECT_ID}/gocon-2017:${TAG_NAME}",
+      "."
+    ]
+
+images: ["gcr.io/${PROJECT_ID}/gocon-2017:${TAG_NAME}"]
