@@ -1,0 +1,119 @@
+{
+    "memo": "19d5b226764bd388671f3fdd621e1fb067efff7d04b0e84a8bd5217604d99fb8",
+    "projects": [
+        {
+            "name": "cloud.google.com/go",
+            "branch": "master",
+            "revision": "8790afb57dfdb470da0b1f441c177e6e49ba66e7",
+            "packages": [
+                "compute/metadata",
+                "internal",
+                "internal/optional",
+                "storage"
+            ]
+        },
+        {
+            "name": "github.com/golang/protobuf",
+            "branch": "master",
+            "revision": "2bc9827a78f95c6665b5fe0abd1fd66b496ae2d8",
+            "packages": [
+                "proto"
+            ]
+        },
+        {
+            "name": "github.com/googleapis/gax-go",
+            "branch": "master",
+            "revision": "4f7da601ca02aa546c5ef911a0b6595fdadf4e18",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "golang.org/x/crypto",
+            "branch": "master",
+            "revision": "81372b2fc2f10bef2a7f338da115c315a56b2726",
+            "packages": [
+                "acme",
+                "acme/autocert"
+            ]
+        },
+        {
+            "name": "golang.org/x/net",
+            "branch": "master",
+            "revision": "a6577fac2d73be281a500b310739095313165611",
+            "packages": [
+                "context",
+                "context/ctxhttp",
+                "http2",
+                "http2/hpack",
+                "idna",
+                "internal/timeseries",
+                "lex/httplex",
+                "trace"
+            ]
+        },
+        {
+            "name": "golang.org/x/oauth2",
+            "branch": "master",
+            "revision": "36bc61733fc9aafc59f010d5e6bfefb63b007fd7",
+            "packages": [
+                ".",
+                "google",
+                "internal",
+                "jws",
+                "jwt"
+            ]
+        },
+        {
+            "name": "google.golang.org/api",
+            "branch": "master",
+            "revision": "612451d2aabbf88084e4f1c48c0781073c0d5583",
+            "packages": [
+                "gensupport",
+                "googleapi",
+                "googleapi/internal/uritemplates",
+                "internal",
+                "iterator",
+                "option",
+                "storage/v1",
+                "transport"
+            ]
+        },
+        {
+            "name": "google.golang.org/appengine",
+            "branch": "master",
+            "revision": "e234e71924d4aa52444bc76f2f831f13fa1eca60",
+            "packages": [
+                ".",
+                "internal",
+                "internal/app_identity",
+                "internal/base",
+                "internal/datastore",
+                "internal/log",
+                "internal/modules",
+                "internal/remote_api",
+                "internal/socket",
+                "internal/urlfetch",
+                "socket",
+                "urlfetch"
+            ]
+        },
+        {
+            "name": "google.golang.org/grpc",
+            "branch": "master",
+            "revision": "777daa17ff9b5daef1cfdf915088a2ada3332bf0",
+            "packages": [
+                ".",
+                "codes",
+                "credentials",
+                "credentials/oauth",
+                "grpclog",
+                "internal",
+                "metadata",
+                "naming",
+                "peer",
+                "transport"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "cloud.google.com/go": {
+            "branch": "master"
+        },
+        "golang.org/x/crypto": {
+            "branch": "master"
+        }
+    }
+}
