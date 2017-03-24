@@ -20,8 +20,10 @@ func main() {
 	http.HandleFunc("/", handle)
 
 	const addr = ":8080"
-	log.Printf("Listening on %s", addr)
-	log.Fatal(http.ListenAndServe(addr, nil))
+	srv := http.Server{}
+	srv.Addr = addr
+	log.Printf("Listening on http://%s", addr)
+	log.Fatal(srv.ListenAndServe())
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
@@ -34,3 +36,16 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, e)
 	}
 }
+
+/*
+Move to main() to turn on HTTPS.
+
+	go func() {
+		const addr = ":8083"
+		log.Printf("Listening on https://%s", addr)
+		srv := https()
+		srv.Addr = addr
+		log.Fatal(srv.ListenAndServeTLS("", ""))
+	}()
+
+*/
