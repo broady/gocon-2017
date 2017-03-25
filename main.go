@@ -13,7 +13,7 @@ import (
 
 func init() {
 	// Simulate a slow app start-up.
-	time.Sleep(5 * time.Second)
+	time.Sleep(6 * time.Second)
 }
 
 var serverStart = time.Now()
