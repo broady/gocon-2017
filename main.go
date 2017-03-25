@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/signal"
 	"sort"
+	"syscall"
 	"time"
 )
 
@@ -24,6 +25,7 @@ func main() {
 	const addr = ":8080"
 	srv := &http.Server{}
 	srv.Addr = addr
+	shutdownOnSignal(srv, syscall.SIGTERM)
 	log.Printf("Listening on http://%s", addr)
 	log.Fatal(srv.ListenAndServe())
 }
