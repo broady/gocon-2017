@@ -22,6 +22,15 @@ var serverStart = time.Now()
 func main() {
 	http.HandleFunc("/", handle)
 
+	go func() {
+		const addr = ":8083"
+		srv := https()
+		srv.Addr = addr
+		shutdownOnSignal(srv, syscall.SIGTERM)
+		log.Printf("Listening on https://%s", addr)
+		log.Fatal(srv.ListenAndServeTLS("", ""))
+	}()
+
 	const addr = ":8080"
 	srv := &http.Server{}
 	srv.Addr = addr
